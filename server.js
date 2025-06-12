@@ -28,7 +28,7 @@ app.post('/send', (req, res) => {
     const json = JSON.parse(data || '{ "stories": [] }');
     json.stories.push(story);
     fs.writeFile(DATA_FILE, JSON.stringify(json, null, 2), err => {
-      if (err) return res.status(500).json({ error: 'Erreur d'écriture' });
+      if (err) return res.status(500).json({ error: "Erreur d'écriture" });
       res.json({ success: true });
     });
   });
