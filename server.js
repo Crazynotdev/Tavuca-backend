@@ -13,7 +13,7 @@ const DATA_FILE = __dirname + '/data/stories.json';
 // GET - Lire les stories
 app.get('/get', (req, res) => {
   fs.readFile(DATA_FILE, 'utf8', (err, data) => {
-    if (err) return res.status(500).json({ error: 'Erreur de lecture' });
+    if (err) return res.status(500).json({ error: "Erreur de lecture" });
     const json = JSON.parse(data || '{ "stories": [] }');
     res.json(json);
   });
